@@ -31,16 +31,6 @@ body:
     validations:
       required: false
   - type: textarea
-    id: actual
-    attributes:
-      label: 実際の動作
-      description: |
-        バグが発生したときにどうなったか記述してください。
-        発生した時の画面やエラーメッセージなどがあれば、スクリーンショットを添付してください。
-      placeholder: "画面が真っ白になった。"
-    validations:
-      required: true
-  - type: textarea
     id: environment
     attributes:
       label: 環境情報（バグの種類より記載するか否か判断）
