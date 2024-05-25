@@ -1,8 +1,15 @@
+以下にため池GO! における、データベースのER図を示す。
+なお、画像は[Mermaid Live Editor](https://mermaid.live/edit)にて出力した。
+
 ```mermaid
 ---
 Title: "ため池GO! のデータベース設計"
 ---
 erDiagram
+    Users ||--o{ GetStamps : contains
+    GetStamps ||--o{ Pond : places
+    Users ||--o{ GetAnimals : contains
+    GetAnimals ||--o{ Animals : species
 
     Users {
         string(6) uid PK "ユーザID"
@@ -10,7 +17,8 @@ erDiagram
     }
 
     GetStamps {
-        string(6) index PK "スタンプを特定する。注意点として、Post処理にて同一データをN回保存しても、重複に気づかないリスクがある。"
+        string(6) index PK "スタンプを特定する"
+        %% 注意点として、Post処理にて同一データをN回保存しても、重複に気づかないリスクがある
         string(6) uid FK "ユーザID"
         int pondKey FK "スタンプを取得した、ため池を判別するため"
         Date getStampAt "スタンプを取得したした日時"
