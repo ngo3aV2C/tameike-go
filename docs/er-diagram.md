@@ -7,7 +7,7 @@ Title: "ため池GO! のデータベース設計"
 ---
 erDiagram
     Users ||--o{ GetStamps : contains
-    GetStamps ||--o{ Pond : places
+    GetStamps ||--o{ Ponds : places
     Users ||--o{ GetAnimals : contains
     GetAnimals ||--o{ Animals : species
 
@@ -24,9 +24,9 @@ erDiagram
         Date getStampAt "スタンプを取得したした日時"
     }
 
-    %% ⚠️Pond Classはデータベースに保存しない
+    %% ⚠️Ponds Classはデータベースに保存しない
     %% あくまでコードロジックに反映させるためのモデル
-    Pond {
+    Ponds {
         int pondKey PK "ため池を識別するためのキー"
         string name "ため池の名前"
         float latitude PK "緯度を表す"
