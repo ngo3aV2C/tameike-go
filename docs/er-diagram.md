@@ -28,11 +28,11 @@ erDiagram
     %% あくまでコードロジックに反映させるためのモデル
     Ponds {
         int pondKey PK "ため池を識別するためのキー"
-        string name "ため池の名前"
+        string name "ため池の名前が重複する場合がある(e.g. 皿池)"
         float latitude PK "緯度を表す"
         float longitude PK "経度を表す"
-        string url PK "ため池ミュージアムのため池紹介ページリンク"
-        string imagePath PK "画像を設置しているパス"
+        string url "ため池ミュージアムのため池紹介ページリンク"
+        string imagePath "画像を設置しているパス"
     }
 
     GetAnimals {
